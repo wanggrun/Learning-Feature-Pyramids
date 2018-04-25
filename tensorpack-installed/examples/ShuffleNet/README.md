@@ -1,2 +1,0 @@
-
-Moved to [../ImageNetModels](../ImageNetModels/).
