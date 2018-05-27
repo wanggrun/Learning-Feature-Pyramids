@@ -1,6 +1,6 @@
 # Learning Feature Pyramids
 
-Code provided by [Guangrun Wang](https://wanggrun.github.io/)
+The codes are  provided by [Guangrun Wang](https://wanggrun.github.io/)
 
 Sun Yat-sen University (SYSU)
 
