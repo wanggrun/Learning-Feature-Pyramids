@@ -23,7 +23,6 @@ def resnet_shortcut(l, n_out, stride, activation=tf.identity):
     else:
         return l
 
-
 def apply_preactivation(l, preact):
     if preact == 'bnrelu':
         shortcut = l    # preserve identity mapping
