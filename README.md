@@ -31,7 +31,7 @@ python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7   --data_format NHWC  -d 101  
 python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-OF-TRAINED-MODEL]  --data_format NHWC  -d 101  --mode resnet --data  [ROOT-OF-IMAGENET-DATASET] --eval
 ```
 
-Trained Models:
++ Trained Models:
 [Download](https://wanggrun.github.io/)
 
 ### PASCAL VOC2012
@@ -54,7 +54,8 @@ python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_train
 python gr_test_pad_crf_msc_flip.py 
 ```
 
-Trained Models
++ Trained Models:
+[Download](https://wanggrun.github.io/)
 
 ### Citation
 
