@@ -1,16 +1,23 @@
-# Train ImageNet and PASCAL VOC2012 \\ via Learning Feature Pyramids
+# Train ImageNet and PASCAL VOC2012 via Learning Feature Pyramids
 
-The codes are  provided by [Guangrun Wang](https://wanggrun.github.io/)
+The codes are provided by [Guangrun Wang](https://wanggrun.github.io/)
 
 Sun Yat-sen University (SYSU)
 
 ### Table of Contents
 0. [Introduction](#introduction)
+0. [ImageNet](#imagenet)
+0. [PASCAL VOC2012](#voc)
 0. [Citation](#citation)
 
 ### Introduction
 
-This repository contains the models described in the paper "Learning Feature Pyramids for Human Pose Estimation" (https://arxiv.org/abs/1708.01101). These models are those used in [ILSVRC](http://image-net.org/challenges/LSVRC/2015/)
+This repository contains the training & testing code on [ImageNet](http://image-net.org/challenges/LSVRC/2015/) and [PASCAL VOC2012](http://host.robots.ox.ac.uk:8080/leaderboard/displaylb.php?challengeid=11&compid=6) via learning feature pyramids (LFP). LFP is originally used for human pose machine, described in the paper "Learning Feature Pyramids for Human Pose Estimation" (https://arxiv.org/abs/1708.01101). We extend it to the semantic image segmentation.
+
+### ImageNet
+
+
+### PASCAL VOC2012
 
 
 ### Citation
