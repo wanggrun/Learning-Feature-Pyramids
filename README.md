@@ -23,16 +23,16 @@ cd pyramid/ImageNet/
 
 + Training script:
 ```
-python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
+python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7   --data_format NHWC  -d 101  --mode resnet --data  [ROOT-OF-IMAGENET-DATASET]
 ```
 
 + Testing script:
 ```
-python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
+python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-OF-TRAINED-MODEL]  --data_format NHWC  -d 101  --mode resnet --data  [ROOT-OF-IMAGENET-DATASET] --eval
 ```
 
 Trained Models:
-
+[Download](https://wanggrun.github.io/)
 
 ### PASCAL VOC2012
 
@@ -43,6 +43,9 @@ cd pyramid/VOC/
 
 + Training script:
 ```
+# Use the ImageNet classification model as pretrained model.
+# Because ImageNet has 1,000 categories while voc only has 21 categories, we must first fix all the parameters except the last layer including 21 channels. We only train the last layer for adaption.
+# Then we finetune all the parameters.
 python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
 ```
 
