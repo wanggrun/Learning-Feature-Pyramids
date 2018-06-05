@@ -1,6 +1,6 @@
 # Training ImageNet and PASCAL VOC2012 via Learning Feature Pyramids
 
-The code is provided by [Guangrun Wang](https://wanggrun.github.io/).
+The code is provided by [Guangrun Wang](https://wanggrun.github.io/) (Rongcong Chen also provides contributions).
 
 Sun Yat-sen University (SYSU)
 
