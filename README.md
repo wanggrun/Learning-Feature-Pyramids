@@ -1,4 +1,4 @@
-# Learning Feature Pyramids
+# Train ImageNet and PASCAL VOC2012 via Learning Feature Pyramids
 
 The codes are  provided by [Guangrun Wang](https://wanggrun.github.io/)
 
