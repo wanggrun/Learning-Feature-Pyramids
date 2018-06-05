@@ -28,7 +28,7 @@ python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7   --data_format NHWC  -d 101  
 
 + Testing script:
 ```
-python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-OF-TRAINED-MODEL]  --data_format NHWC  -d 101  --mode resnet --data  [ROOT-OF-IMAGENET-DATASET] --eval
+python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-TO-LOAD-MODEL]  --data_format NHWC  -d 101  --mode resnet --data  [ROOT-OF-IMAGENET-DATASET] --eval
 ```
 
 + Trained Models:
@@ -48,10 +48,10 @@ cd pyramid/VOC/
 # we must first fix all the parameters except the last layer including 21 channels. We only train the last layer for adaption
 # by adding: "with freeze_variables(stop_gradient=True, skip_collection=True): " in Line 206 of resnet_model_voc_aspp.py
 # Then we finetune all the parameters.
-# The model is first trained on COCO, then on train_aug of voc. For testing on voc leaderboard, the model is further trained on voc val
+# The model is first trained on COCO, then on train_aug of voc. For testing on voc leaderboard, the model is further trained on voc val.
 # it achieves 81.0% on voc leaderboard.
 # a training script example is as follows.
-python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
+python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-TO-LOAD-MODEL]  --data_format NHWC  -d 101  --mode resnet --log_dir [ROOT-TO-SAVE-MODEL]  --data [ROOT-OF-TRAINING-DATA]
 ```
 
 + Testing script:
