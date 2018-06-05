@@ -16,28 +16,40 @@ This repository contains the training & testing code on [ImageNet](http://image-
 
 ### ImageNet
 
-First:
-+ cd pyramid/ImageNet/ 
++ First:
+```
+cd pyramid/ImageNet/ 
+```
 
-Training script:
-+ python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
++ Training script:
+```
+python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
+```
 
-Testing script:
-+ python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
++ Testing script:
+```
+python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
+```
 
 Trained Models:
 
 
 ### PASCAL VOC2012
 
-First:
-+ cd pyramid/VOC/
++ First:
+```
+cd pyramid/VOC/
+```
 
-Training script:
-+ python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
++ Training script:
+```
+python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load ../train_log_trainval/imagenet-resnet-d101-trainval/model-1187596  --data_format NHWC  -d 101  --mode resnet --log_dir onlyval  --data  /media/SSD/wyang/datase
+```
 
-Testing script:
-+ python gr_test_pad_crf_msc_flip.py 
++ Testing script:
+```
+python gr_test_pad_crf_msc_flip.py 
+```
 
 Trained Models
 
