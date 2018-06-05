@@ -24,7 +24,7 @@ from tqdm import tqdm
 import pydensecrf.densecrf as dcrf
 
 FLAGS = None
-os.environ['CUDA_VISIBLE_DEVICES'] = "7"
+os.environ['CUDA_VISIBLE_DEVICES'] = "6"
 
 CROPSHAPE = 480
 
@@ -72,9 +72,7 @@ def data_crop_test_output(session, gr_data, logits, image, mean, std, crop_size,
             crop_index += 1
      
     score_map = score_map[:image_h,:image_w] / count[:image_h,:image_w]
-    predicted_label = np.argmax(score_map, 2)
-    predicted_label = np.asarray(predicted_label, dtype='uint8')
-    return predicted_label
+    return score_map
 
 def dense_crf_batch(probs, img=None, n_iters=10, 
               sxy_gaussian=(1, 1), compat_gaussian=4,
@@ -204,7 +202,7 @@ def main(_):
   mean = np.asarray(mean, dtype='float32')
   std = np.asarray(std, dtype='float32')
   crop_size = CROPSHAPE
-  stride = int(CROPSHAPE/10)
+  stride = int(CROPSHAPE/3)
   df_test = pd.read_csv('test.csv', delim_whitespace=True, header=0)
   # We want to see all the logging messages for this tutorial.
   tf.logging.set_verbosity(tf.logging.INFO)
@@ -230,7 +228,7 @@ def main(_):
 
   # Load checkpoint
   # assert os.path.isfile(FLAGS.start_checkpoint+'.meta'), FLAGS.start_checkpoint
-  gr_models.load_variables_from_checkpoint(sess, 'train_log/imagenet-resnet-d101-trainval/model-1187220')
+  gr_models.load_variables_from_checkpoint(sess, 'train_log/imagenet-resnet-d101-onlyval/model-1211488')
 
   starttime = datetime.datetime.now()
   print('Start eval @ ', starttime.strftime("%Y-%m-%d %H:%M:%S"))
@@ -243,15 +241,33 @@ def main(_):
     real_batch = end - start
     for id in df_test_batch['data']:
       print ('/home/grwang/seg/voc-data/' + id)
-      img = cv2.imread('/home/grwang/seg/' + id)      
-      pred_label = data_crop_test_output(sess, gr_data, logits, img, mean, std, crop_size, stride)
+      img_ori = cv2.imread('/home/grwang/seg/' + id)
+      h_ori, w_ori, _ = img_ori.shape
+
+      if h_ori*w_ori < 460 * 500:
+        scs = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75]  
+      else:
+        scs = [0.5, 0.75, 1.0, 1.25, 1.5]
+        print(max(h_ori, w_ori))
+      
+
+      maps = []
+      for sc in scs:
+        img = cv2.resize(img_ori, (int(float(w_ori)*sc), int(float(h_ori)*sc)), interpolation=cv2.INTER_CUBIC)
+        score_map = data_crop_test_output(sess, gr_data, logits, img, mean, std, crop_size, stride)
+        score_map = cv2.resize(score_map, (w_ori, h_ori), interpolation=cv2.INTER_CUBIC)
+        maps.append(score_map)
+
+      score_map = np.mean(np.stack(maps), axis=0)
+      pred_label = np.argmax(score_map, 2)      
+      pred_label = np.asarray(pred_label, dtype='uint8')
+
       print(np.max(pred_label))
       name = id.split('/', 10)
-      cv2.imwrite('prediction/' + name[1][0:11] + '.png', pred_label) 
+      cv2.imwrite('prediction-val/' + name[1][0:11] + '.png', pred_label) 
   
   endtime = datetime.datetime.now()
   print('Total time: ', endtime - starttime)
-
 
 
 if __name__ == '__main__':

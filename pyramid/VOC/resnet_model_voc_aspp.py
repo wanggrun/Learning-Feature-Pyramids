@@ -203,14 +203,14 @@ def aspp(l, name, ch_out):
 def resnet_backbone(image, num_blocks, group_func, group_func_dilation, block_func, block_func_dilation):
     with argscope(Conv2D, use_bias=False,
                   kernel_initializer=tf.variance_scaling_initializer(scale=2.0, mode='fan_out')):
-        # with freeze_variables(stop_gradient=True, skip_collection=True):
-        logits = (LinearWrap(image)
-                  .Conv2D('conv0', 64, 7, strides=2, activation=BNReLU)
-                  .MaxPooling('pool0', shape=3, stride=2, padding='SAME')
-                  .apply(group_func, 'group0', block_func, 64, num_blocks[0], 1)
-                  .apply(group_func, 'group1', block_func, 128, num_blocks[1], 2)
-                  .apply(group_func_dilation, 'group2', block_func_dilation, 256, num_blocks[2], 1, 2)
-                  .apply(group_func_dilation, 'group3', block_func_dilation, 512, num_blocks[3], 1, 4))
+        with freeze_variables(stop_gradient=True, skip_collection=True):
+            logits = (LinearWrap(image)
+                      .Conv2D('conv0', 64, 7, strides=2, activation=BNReLU)
+                      .MaxPooling('pool0', shape=3, stride=2, padding='SAME')
+                      .apply(group_func, 'group0', block_func, 64, num_blocks[0], 1)
+                      .apply(group_func, 'group1', block_func, 128, num_blocks[1], 2)
+                      .apply(group_func_dilation, 'group2', block_func_dilation, 256, num_blocks[2], 1, 2)
+                      .apply(group_func_dilation, 'group3', block_func_dilation, 512, num_blocks[3], 1, 4))
         # logits = (logits.Conv2D('conv102', 21, 1, stride=1, activation=tf.identity)())
 
 

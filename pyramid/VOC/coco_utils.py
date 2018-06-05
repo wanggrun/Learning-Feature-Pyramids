@@ -501,15 +501,15 @@ class MSC_Model(ModelDesc):
                 logits = tf.gather(logits, indices)
                 return logits, label
 
-            logits_bike, label_bike = process_hardmine_class(logits, label, 2)
-            logits100_bike, _ = process_hardmine_class(logits100, label, 2)
-            logits075_bike, label075_bike = process_hardmine_class(logits075, label075, 2)
-            logits05_bike, label05_bike = process_hardmine_class(logits05, label05, 2)
+            # logits_bike, label_bike = process_hardmine_class(logits, label, 2)
+            # logits100_bike, _ = process_hardmine_class(logits100, label, 2)
+            # logits075_bike, label075_bike = process_hardmine_class(logits075, label075, 2)
+            # logits05_bike, label05_bike = process_hardmine_class(logits05, label05, 2)
 
-            logits_boat, label_boat = process_hardmine_class(logits, label, 4)
-            logits100_boat, _ = process_hardmine_class(logits100, label, 4)
-            logits075_boat, label075_boat = process_hardmine_class(logits075, label075, 4)
-            logits05_boat, label05_boat = process_hardmine_class(logits05, label05, 4)
+            # logits_boat, label_boat = process_hardmine_class(logits, label, 4)
+            # logits100_boat, _ = process_hardmine_class(logits100, label, 4)
+            # logits075_boat, label075_boat = process_hardmine_class(logits075, label075, 4)
+            # logits05_boat, label05_boat = process_hardmine_class(logits05, label05, 4)
             '''
             indices_bike = tf.squeeze(tf.where(tf.equal(raw_label, 2)), 1)
             label_bike = tf.cast(tf.gather(raw_label, indices_bike), tf.int32)

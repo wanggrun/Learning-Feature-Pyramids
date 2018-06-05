@@ -30,7 +30,6 @@ from resnet_model_voc_aspp import (
 #Joint Train
 TOTAL_BATCH_SIZE = 8
 
-
 class Model(MSC_Model):
     def __init__(self, depth, data_format='NCHW', mode='resnet'):
         super(Model, self).__init__(data_format)
@@ -83,7 +82,7 @@ def get_config(model, fake=False):
         dataset_val = get_data('val', batch)
         callbacks = [
             ModelSaver(),
-            ScheduledHyperParamSetter('learning_rate', [(0,1.25e-5),(10, 5e-6), (30, 2.5e-6), (50, 1.25e-6)]), 
+            ScheduledHyperParamSetter('learning_rate', [(0, 1.25e-4), (20, 5e-5), (40, 2.5e-5), (60,1.25e-5),(80, 5e-6), (100, 2.5e-6), (120, 1.25e-6)]), 
             HumanHyperParamSetter('learning_rate'),
         ]
         #Train Val
@@ -109,7 +108,7 @@ def get_config(model, fake=False):
         model=model,
         dataflow=dataset_train,
         callbacks=callbacks,
-        steps_per_epoch=376,
+        steps_per_epoch=181,
         max_epoch=140,
         nr_tower=nr_tower
     )
