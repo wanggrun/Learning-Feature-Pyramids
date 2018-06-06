@@ -25,7 +25,7 @@ This repository contains the training & testing code on [ImageNet](http://image-
    2. (a) images & ground truths; (b) trimap of learning feature pyramids; (c) trimap of the original ResNet.
         ![trimaps](https://github.com/wanggrun/Learning-Feature-Pyramids/blob/master/results/trimap.jpg)
 
-   3. It achieves 81.0% mIoU on PASCAL VOC2011 segmentation [leaderboard](http://host.robots.ox.ac.uk:8080/leaderboard/displaylb.php?challengeid=11&compid=6).
+   3. It achieves 81.0% mIoU on PASCAL VOC2011 segmentation [leaderboard](http://host.robots.ox.ac.uk:8080/leaderboard/displaylb.php?challengeid=11&compid=6), a significance improvement over its baseline DeepLabV2 (79.6%).
 
 ### ImageNet
 
