@@ -19,10 +19,11 @@ This repository contains the training & testing code on [ImageNet](http://image-
 
 + Segmentation Visualization:
 
-(a) input images; (b) segmentation results.
+   (a) input images; (b) segmentation results.
         ![segmentation visualization](https://github.com/wanggrun/Learning-Feature-Pyramids/blob/master/results/vis.jpg)
 
-
+   (a) images & ground truths; (b) trimap of learning feature pyramids; (c) trimap of the original ResNet.
+        ![trimaps](https://github.com/wanggrun/Learning-Feature-Pyramids/blob/master/results/trimap.jpg)
 
 ### ImageNet
 
