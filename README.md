@@ -66,10 +66,15 @@ python gr_test_pad_crf_msc_flip.py
 + Trained Models:
 
    Model trained for evaluation on voc val set:
+
    [Baidu Pan](https://wanggrun.github.io/)
+
    [Google Drive](https://wanggrun.github.io/)
+
    Model trained for evaluation on voc leaderboard (test set)
+
    [Baidu Pan](https://wanggrun.github.io/)
+
    [Google Drive](https://wanggrun.github.io/)
 
 ### Citation
