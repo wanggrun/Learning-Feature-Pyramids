@@ -63,6 +63,12 @@ python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-TO-LOAD-MODE
 python gr_test_pad_crf_msc_flip.py 
 ```
 
++ Results:
+
+top line: [Batch Normalization(BN)](https://arxiv.org/abs/1502.03167); mid line: [Group Normalization](https://arxiv.org/abs/1803.08494); bottom line: [Kalman Normalization](https://arxiv.org/abs/1802.03133)
+        ![Training curves](https://github.com/wanggrun/Kalman-Normalization/blob/master/results/bn_gn_bkn_micro_batch.png)
+
+
 + Trained Models:
 
    Model trained for evaluation on voc val set:
