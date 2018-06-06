@@ -32,7 +32,9 @@ python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-TO-LOAD-MODEL]  
 ```
 
 + Trained Models:
+
 [Baidu Pan](https://wanggrun.github.io/)
+
 [Google Drive](https://wanggrun.github.io/)
 
 ### PASCAL VOC2012
