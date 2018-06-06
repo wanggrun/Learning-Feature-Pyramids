@@ -14,6 +14,16 @@ Sun Yat-sen University (SYSU)
 
 This repository contains the training & testing code on [ImageNet](http://image-net.org/challenges/LSVRC/2015/) and [PASCAL VOC2012](http://host.robots.ox.ac.uk:8080/leaderboard/displaylb.php?challengeid=11&compid=6) via learning feature pyramids (LFP). LFP is originally used for human pose machine, described in the paper "Learning Feature Pyramids for Human Pose Estimation" (https://arxiv.org/abs/1708.01101). We extend it to the semantic image segmentation.
 
+
+### Results
+
++ Segmentation Visualization:
+
+(a) input images; (b) segmentation results.
+        ![segmentation visualization](https://github.com/wanggrun/Learning-Feature-Pyramids/blob/master/results/vis.jpg)
+
+
+
 ### ImageNet
 
 + First:
@@ -62,11 +72,6 @@ python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-TO-LOAD-MODE
 ```
 python gr_test_pad_crf_msc_flip.py 
 ```
-
-+ Results:
-
-top line: [Batch Normalization(BN)](https://arxiv.org/abs/1502.03167); mid line: [Group Normalization](https://arxiv.org/abs/1803.08494); bottom line: [Kalman Normalization](https://arxiv.org/abs/1802.03133)
-        ![Training curves](https://github.com/wanggrun/Kalman-Normalization/blob/master/results/bn_gn_bkn_micro_batch.png)
 
 
 + Trained Models:
