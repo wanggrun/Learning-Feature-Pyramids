@@ -79,15 +79,15 @@ python gr_test_pad_crf_msc_flip.py
 
    Model trained for evaluation on voc val set:
 
-   [Baidu Pan](https://wanggrun.github.io/)
+   [Baidu Pan](https://pan.baidu.com/s/1C7r10EeZEOIn0njRCuuR1g), code: 7dl0
 
-   [Google Drive](https://wanggrun.github.io/)
+   [Google Drive](https://drive.google.com/drive/folders/1c3Fr6yC_rwXGF4hJB4ADmtd2AF8wsO51?usp=sharing)
 
    Model trained for evaluation on voc leaderboard (test set)
 
-   [Baidu Pan](https://wanggrun.github.io/)
+   [Baidu Pan](https://pan.baidu.com/s/1C7r10EeZEOIn0njRCuuR1g), code: 7dl0
 
-   [Google Drive](https://wanggrun.github.io/)
+   [Google Drive](https://drive.google.com/drive/folders/1c3Fr6yC_rwXGF4hJB4ADmtd2AF8wsO51?usp=sharing)
 
 ### Citation
 
