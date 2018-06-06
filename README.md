@@ -32,7 +32,8 @@ python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-TO-LOAD-MODEL]  
 ```
 
 + Trained Models:
-[Download](https://wanggrun.github.io/)
+[Baidu Pan](https://wanggrun.github.io/)
+[Google Drive](https://wanggrun.github.io/)
 
 ### PASCAL VOC2012
 
@@ -48,7 +49,8 @@ cd pyramid/VOC/
 # we must first fix all the parameters except the last layer including 21 channels. We only train the last layer for adaption
 # by adding: "with freeze_variables(stop_gradient=True, skip_collection=True): " in Line 206 of resnet_model_voc_aspp.py
 # Then we finetune all the parameters.
-# The model is first trained on COCO, then on train_aug of voc. For testing on voc leaderboard, the model is further trained on voc val.
+# For evaluation on voc val set, the model is first trained on COCO, then on train_aug of voc. 
+# For evaluation on voc leaderboard (test set), the above model is further trained on voc val.
 # it achieves 81.0% on voc leaderboard.
 # a training script example is as follows.
 python resnet-msc-voc-aspp.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-TO-LOAD-MODEL]  --data_format NHWC  -d 101  --mode resnet --log_dir [ROOT-TO-SAVE-MODEL]  --data [ROOT-OF-TRAINING-DATA]
@@ -60,7 +62,14 @@ python gr_test_pad_crf_msc_flip.py
 ```
 
 + Trained Models:
-[Download](https://wanggrun.github.io/)
+```
+Model trained for evaluation on voc val set:
+[Baidu Pan](https://wanggrun.github.io/)
+[Google Drive](https://wanggrun.github.io/)
+Model trained for evaluation on voc leaderboard (test set)
+[Baidu Pan](https://wanggrun.github.io/)
+[Google Drive](https://wanggrun.github.io/)
+```
 
 ### Citation
 
