@@ -51,9 +51,9 @@ python imagenet-resnet.py   --gpu 0,1,2,3,4,5,6,7  --load [ROOT-TO-LOAD-MODEL]  
 
    ResNet50:
 
-   [Baidu Pan](https://wanggrun.github.io), code: 269o
+   [Baidu Pan](https://pan.baidu.com/s/1ADYUt0QL1Vq42uqz75-W0A), code: zvgd
 
-   [Google Drive](https://wanggrun.github.io)
+   [Google Drive](https://drive.google.com/drive/folders/1zcwLZVFdm8PONL_R6_8TNSLvb1vs6Lh7?usp=sharing)
 
 
 ### PASCAL VOC2012
